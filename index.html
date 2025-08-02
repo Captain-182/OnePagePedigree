@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>Family Pedigree Tree</title>
+  <title>Family Tree Vertical</title>
   <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@700&display=swap" rel="stylesheet">
   <style>
     body {
@@ -31,7 +31,6 @@
       align-items: center;
     }
 
-    /* Parents */
     .parents {
       display: flex;
       gap: 60px;
@@ -59,18 +58,10 @@
       background: #aaa;
     }
 
-    .line-horizontal {
-      width: 80%;
-      height: 2px;
-      background: #aaa;
-      margin: 0 auto 40px auto;
-    }
-
-    /* Brothers Row */
-    .brothers {
+    .brother-group {
       display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
+      flex-direction: column;
+      align-items: center;
       gap: 60px;
     }
 
@@ -80,18 +71,13 @@
       align-items: center;
     }
 
-    .brother-box {
-      padding: 20px;
-      border-radius: 10px;
-      margin-bottom: 20px;
-    }
-
     .brother img {
       width: 100px;
       height: 100px;
       border-radius: 50%;
       object-fit: cover;
       margin-bottom: 10px;
+      border: 3px solid #555;
     }
 
     .brother-name {
@@ -107,7 +93,7 @@
     }
 
     .branch-children {
-      width: 80%;
+      width: 200px;
       height: 2px;
       background: #aaa;
       margin: 0 auto 20px auto;
@@ -127,6 +113,7 @@
       display: flex;
       flex-direction: column;
       align-items: center;
+      background: rgba(255, 255, 255, 0.05);
     }
 
     .child img {
@@ -137,53 +124,25 @@
       margin-bottom: 5px;
     }
 
-    /* THEMES */
-    /* Mudassar */
-    .mudassar .brother-box {
-      border: 2px solid #fff;
-      background: transparent;
-    }
-    .mudassar .child {
-      border-color: #fff;
-      background: transparent;
-    }
+    /* THEMES: Brother name & child border colors */
+    .mudassar img { border-color: #fff; }
+    .mudassar .child { border-color: #fff; }
 
-    /* Umer */
-    .umer .brother-box {
-      border: 2px solid #aaa;
-      background: #111;
-    }
-    .umer .child {
-      border-color: #aaa;
-      background: #111;
-    }
+    .umer img { border-color: #aaa; }
+    .umer .child { border-color: #aaa; }
 
-    /* Ahsan */
-    .ahsan .brother-box {
-      border: 2px solid #bbb;
-      background: #222;
-    }
-    .ahsan .child {
-      border-color: #bbb;
-      background: #222;
-    }
+    .ahsan img { border-color: #bbb; }
+    .ahsan .child { border-color: #bbb; }
 
-    /* Mubashar */
-    .mubashar .brother-box {
-      border: 2px solid #3399ff;
-      background: rgba(51, 153, 255, 0.1);
-    }
-    .mubashar .child {
-      border-color: #3399ff;
-      background: rgba(51, 153, 255, 0.05);
-    }
+    .mubashar img { border-color: #3399ff; }
+    .mubashar .child { border-color: #3399ff; }
 
   </style>
 </head>
 <body>
 
-  <h1>Our Family Tree</h1>
-  <p class="intro">Mushtaq Ahmad & Mumtaz Khanum ➜ 4 Sons ➜ Their Children</p>
+  <h1>Family Pedigree Tree</h1>
+  <p class="intro">Vertical column with parents ➜ brothers ➜ their children.</p>
 
   <div class="tree">
 
@@ -200,17 +159,14 @@
     </div>
 
     <div class="line-vertical"></div>
-    <div class="line-horizontal"></div>
 
-    <!-- Brothers -->
-    <div class="brothers">
+    <!-- Brothers stacked -->
+    <div class="brother-group">
 
       <!-- Mudassar -->
       <div class="brother mudassar">
-        <div class="brother-box">
-          <img src="images/brother1.jpg" alt="Mudassar Ul Mahmood">
-          <div class="brother-name">Mudassar Ul Mahmood</div>
-        </div>
+        <img src="images/brother1.jpg" alt="Mudassar Ul Mahmood">
+        <div class="brother-name">Mudassar Ul Mahmood</div>
         <div class="line-vertical-small"></div>
         <div class="branch-children"></div>
         <div class="children">
@@ -222,10 +178,8 @@
 
       <!-- Umer -->
       <div class="brother umer">
-        <div class="brother-box">
-          <img src="images/brother2.jpg" alt="Umer Farooq">
-          <div class="brother-name">Umer Farooq</div>
-        </div>
+        <img src="images/brother2.jpg" alt="Umer Farooq">
+        <div class="brother-name">Umer Farooq</div>
         <div class="line-vertical-small"></div>
         <div class="branch-children"></div>
         <div class="children">
@@ -236,10 +190,8 @@
 
       <!-- Ahsan -->
       <div class="brother ahsan">
-        <div class="brother-box">
-          <img src="images/IMG-20210307-WA0003.jpg" alt="Ahsan Mehmood">
-          <div class="brother-name">Ahsan Mehmood</div>
-        </div>
+        <img src="ahsan.jpg" alt="Ahsan Mehmood">
+        <div class="brother-name">Ahsan Mehmood</div>
         <div class="line-vertical-small"></div>
         <div class="branch-children"></div>
         <div class="children">
@@ -250,10 +202,8 @@
 
       <!-- Mubashar -->
       <div class="brother mubashar">
-        <div class="brother-box">
-          <img src="images/brother4.jpg" alt="Mubashar Shahzad">
-          <div class="brother-name">Mubashar Shahzad</div>
-        </div>
+        <img src="images/brother4.jpg" alt="Mubashar Shahzad">
+        <div class="brother-name">Mubashar Shahzad</div>
         <div class="line-vertical-small"></div>
         <div class="branch-children"></div>
         <div class="children">
@@ -263,6 +213,7 @@
       </div>
 
     </div>
+
   </div>
 
 </body>
