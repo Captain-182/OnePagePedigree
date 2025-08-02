@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>Family Tree Vertical</title>
+  <title>Horizontal Family Tree</title>
   <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@700&display=swap" rel="stylesheet">
   <style>
     body {
@@ -34,7 +34,7 @@
     .parents {
       display: flex;
       gap: 60px;
-      margin-bottom: 20px;
+      margin-bottom: 40px;
     }
 
     .parent {
@@ -54,15 +54,14 @@
 
     .line-vertical {
       width: 2px;
-      height: 50px;
+      height: 40px;
       background: #aaa;
     }
 
-    .brother-group {
+    .brothers {
       display: flex;
-      flex-direction: column;
-      align-items: center;
-      gap: 60px;
+      justify-content: center;
+      gap: 80px;
     }
 
     .brother {
@@ -83,37 +82,18 @@
     .brother-name {
       font-weight: bold;
       font-size: 20px;
-      margin-bottom: 10px;
     }
 
-    .line-vertical-small {
+    .line-down {
       width: 2px;
       height: 40px;
       background: #aaa;
-    }
-
-    .branch-children {
-      width: 200px;
-      height: 2px;
-      background: #aaa;
-      margin: 0 auto 20px auto;
+      margin: 10px 0;
     }
 
     .children {
       display: flex;
-      justify-content: center;
       gap: 20px;
-      flex-wrap: wrap;
-    }
-
-    .child {
-      border: 2px solid;
-      border-radius: 8px;
-      padding: 10px 15px;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      background: rgba(255, 255, 255, 0.05);
     }
 
     .child img {
@@ -121,28 +101,32 @@
       height: 80px;
       border-radius: 50%;
       object-fit: cover;
-      margin-bottom: 5px;
+      border: 2px solid #555;
     }
 
-    /* THEMES: Brother name & child border colors */
+    .child-name {
+      margin-top: 5px;
+      font-size: 16px;
+    }
+
+    /* Brother themes */
     .mudassar img { border-color: #fff; }
-    .mudassar .child { border-color: #fff; }
+    .mudassar .child img { border-color: #fff; }
 
     .umer img { border-color: #aaa; }
-    .umer .child { border-color: #aaa; }
+    .umer .child img { border-color: #aaa; }
 
     .ahsan img { border-color: #bbb; }
-    .ahsan .child { border-color: #bbb; }
+    .ahsan .child img { border-color: #bbb; }
 
     .mubashar img { border-color: #3399ff; }
-    .mubashar .child { border-color: #3399ff; }
-
+    .mubashar .child img { border-color: #3399ff; }
   </style>
 </head>
 <body>
 
-  <h1>Family Pedigree Tree</h1>
-  <p class="intro">Vertical column with parents ➜ brothers ➜ their children.</p>
+  <h1>Horizontal Family Tree</h1>
+  <p class="intro">Parents ➜ Brothers in a row ➜ Children branch down without boxes.</p>
 
   <div class="tree">
 
@@ -160,19 +144,27 @@
 
     <div class="line-vertical"></div>
 
-    <!-- Brothers stacked -->
-    <div class="brother-group">
+    <!-- Brothers horizontal -->
+    <div class="brothers">
 
       <!-- Mudassar -->
       <div class="brother mudassar">
         <img src="images/brother1.jpg" alt="Mudassar Ul Mahmood">
         <div class="brother-name">Mudassar Ul Mahmood</div>
-        <div class="line-vertical-small"></div>
-        <div class="branch-children"></div>
+        <div class="line-down"></div>
         <div class="children">
-          <div class="child"><img src="images/ahmad.jpg"><div>Muhammad Ahmad Mudassar</div></div>
-          <div class="child"><img src="images/khizer.jpg"><div>Muhammad Khizer Mudassar</div></div>
-          <div class="child"><img src="images/aahil.jpg"><div>Muhammad Aahil Mudassar</div></div>
+          <div class="child">
+            <img src="images/ahmad.jpg">
+            <div class="child-name">Muhammad Ahmad Mudassar</div>
+          </div>
+          <div class="child">
+            <img src="images/khizer.jpg">
+            <div class="child-name">Muhammad Khizer Mudassar</div>
+          </div>
+          <div class="child">
+            <img src="images/aahil.jpg">
+            <div class="child-name">Muhammad Aahil Mudassar</div>
+          </div>
         </div>
       </div>
 
@@ -180,11 +172,16 @@
       <div class="brother umer">
         <img src="images/brother2.jpg" alt="Umer Farooq">
         <div class="brother-name">Umer Farooq</div>
-        <div class="line-vertical-small"></div>
-        <div class="branch-children"></div>
+        <div class="line-down"></div>
         <div class="children">
-          <div class="child"><img src="images/dawood.jpg"><div>Dawood Umer</div></div>
-          <div class="child"><img src="images/hashim.jpg"><div>Hashim Umer</div></div>
+          <div class="child">
+            <img src="images/dawood.jpg">
+            <div class="child-name">Dawood Umer</div>
+          </div>
+          <div class="child">
+            <img src="images/hashim.jpg">
+            <div class="child-name">Hashim Umer</div>
+          </div>
         </div>
       </div>
 
@@ -192,11 +189,16 @@
       <div class="brother ahsan">
         <img src="brother3.jpg" alt="Ahsan Mehmood">
         <div class="brother-name">Ahsan Mehmood</div>
-        <div class="line-vertical-small"></div>
-        <div class="branch-children"></div>
+        <div class="line-down"></div>
         <div class="children">
-          <div class="child"><img src="images/ayan.jpg"><div>Ayan Ahsan</div></div>
-          <div class="child"><img src="images/wadeed.jpg"><div>Wadeed Ahsan</div></div>
+          <div class="child">
+            <img src="images/ayan.jpg">
+            <div class="child-name">Ayan Ahsan</div>
+          </div>
+          <div class="child">
+            <img src="images/wadeed.jpg">
+            <div class="child-name">Wadeed Ahsan</div>
+          </div>
         </div>
       </div>
 
@@ -204,11 +206,16 @@
       <div class="brother mubashar">
         <img src="images/brother4.jpg" alt="Mubashar Shahzad">
         <div class="brother-name">Mubashar Shahzad</div>
-        <div class="line-vertical-small"></div>
-        <div class="branch-children"></div>
+        <div class="line-down"></div>
         <div class="children">
-          <div class="child"><img src="images/saleh.jpg"><div>Saleh Mubashar</div></div>
-          <div class="child"><img src="images/huzaifa.jpg"><div>Huzaifa Mubashar</div></div>
+          <div class="child">
+            <img src="images/saleh.jpg">
+            <div class="child-name">Saleh Mubashar</div>
+          </div>
+          <div class="child">
+            <img src="images/huzaifa.jpg">
+            <div class="child-name">Huzaifa Mubashar</div>
+          </div>
         </div>
       </div>
 
